@@ -1,14 +1,13 @@
-import { Link } from "react-router-dom";
-import { FaQuestionCircle, FaTicketAlt } from "react-icons/fa";
-import CarouselPage from "./CarouselPage";
-import About from "./About";
-import Pricing from "./Pricing";
+import CarouselPage from "./CarouselPage/CarouselPage";
+import About from "./About/About";
+import Pricing from "./Pricing/Pricing";
 import Footer from "./Footer";
 
 function Home() {
   return (
     <div>
       <CarouselPage />
+      <hr />
       <About />
       <hr />
       <Pricing />

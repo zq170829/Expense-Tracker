@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import Carousel from "react-bootstrap/Carousel";
 // import ScrollDown from "../scroll-down/ScrollDown";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./CarouselPage.css";
 
-import Slide1 from "../images/image1.jpeg";
-import Slide2 from "../images/image2.jpeg";
-import Slide3 from "../images/image3.jpeg";
+import Slide1 from "../../images/image1.jpeg";
+import Slide2 from "../../images/image2.jpeg";
+import Slide3 from "../../images/image3.jpeg";
 
-export default class About extends Component {
+
+export default class CarouselPage extends Component {
   render() {
     return (
       <div id="home">

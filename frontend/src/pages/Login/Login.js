@@ -23,9 +23,9 @@ function Login() {
 
   return (
     <>
-      <section className="heading">
+      <section className="heading container mt-5 pt-5">
         <h1>
-          <FaSignInAlt /> Login
+          <FaSignInAlt /> Login 
         </h1>
         <p>Please log in to get support</p>
       </section>

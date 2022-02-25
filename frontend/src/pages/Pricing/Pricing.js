@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import Badge from "react-bootstrap/Badge";
-import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Pricing.css";
@@ -10,9 +9,9 @@ import "./Pricing.css";
 export default class Pricing extends Component {
   render() {
     return (
-      <div id="pricing" className="p-5">
-        <h1 className="mt-15 text-center">Pricing Page</h1>
-        <CardGroup className="mr-5">
+      <div id="pricing" className="pt-5">
+        <h1 className="pt-5 text-center">Pricing Details</h1>
+        <CardGroup className="mr-5 mb-2">
           <Card className="bg-light mr-2">
             <Card.Body>
               <Card.Title className="text-center">

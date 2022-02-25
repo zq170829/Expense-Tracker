@@ -29,7 +29,7 @@ function Register() {
 
   return (
     <>
-      <section className="heading">
+      <section className="heading container mt-5 pt-5">
         <h1>
           <FaUser /> Register
         </h1>

@@ -3,11 +3,11 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const stickyFooterStyle = {
   backgroundColor: "#D3D3D3",
-  fontSize: "13px",
+  fontSize: "14px",
   color: "black",
   borderTop: "1px solid #E7E7E7",
   textAlign: "center",
-  padding: "20px",
+  padding: "40px",
   position: "fixed",
   left: "0",
   bottom: "0",

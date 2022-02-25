@@ -2,18 +2,16 @@ import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
-import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
 export default class About extends Component {
   render() {
     return (
-      <div id="about" className="bg-danger">
+      <div id="about" className="pt-5">
         <Container fluid className="mt-5">
           <Row>
-            <Col className="mt-7 text-center bg-info">
+            <Col className="mt-7 text-center">
               <h1 className="pt-7">Best Expense Tracker App</h1>
               <p>Know where your money goes</p>
             </Col>

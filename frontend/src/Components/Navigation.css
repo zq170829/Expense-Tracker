@@ -1,22 +1,27 @@
-.logo {
+/* .logo {
     width: 54%;
     margin-left: 34px;
-  }
+  } */
   
   .nav-theme {
-    background-color: rgba(16, 16, 24, 0.89);
-    /* background-color: white; */
+    /* background-color: rgba(16, 16, 24, 0.89); */
     font-size: 20px;
     height: 85px !important;
   }
   .navbar-dark .navbar-nav .nav-link {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    
   }
   .animate-navbar {
-    box-shadow: 1px 1px 1px #222;
+    box-shadow: 1px 1px 1px #fabb47;
     animation: moveDown 0.5s ease-in-out;
   }
+
+  .nav_brand {
+    width: 30%;
+  }
+
   @media only screen and (max-width: 786px) {
     .nav-theme {
       height: auto !important;
