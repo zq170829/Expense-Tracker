@@ -11,6 +11,7 @@
   }
 }
 .nav_brand {
+  width: 50%;
   font-family: "Audiowide", sans-serif;
 }
 
@@ -19,9 +20,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(5px + 2vmin);
   color: white;
 }
+
 
 @keyframes App-logo-spin {
   from {
@@ -72,7 +74,7 @@ h3 {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 px;
   text-align: center;
 }
 
@@ -215,7 +217,8 @@ h3 {
 
 .btn-back {
   width: 150px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  padding: 0px 15px;
 }
 
 .btn:hover {
@@ -249,12 +252,12 @@ h3 {
 .ticket-headings {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  /* gap: 20px; */
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
   background: #f4f4f4;
-  padding: 10px 15px;
+  /* padding: 5px 10px; */
   border-radius: 5px;
   text-align: center;
 }

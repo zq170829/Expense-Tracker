@@ -42,3 +42,36 @@
     }
   }
   
+
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong');
+
+.App-logo {
+  height: 8vmin;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 10s linear;
+  }
+}
+.nav_brand {
+  font-family: "Audiowide", sans-serif;
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
