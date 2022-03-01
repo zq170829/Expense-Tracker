@@ -17,17 +17,24 @@ This project is built based on MERN stack.
     - config
         - db.js
     - controllers
-        - userController.js
+        - expenseController.js
+        - userController.js  
     - middleware
         - authMiddleware.js
         - errorMiddleware.js
     - models
+        - ExpenseModel.js
         - userModel.js
     - routes
+        - expenseRoutes.js
         - userRoutes.js
    - server.js
     
-- frontend 
+- frontend
+
+
+
+
 ## Installation
 
 Install backend dependencies
@@ -41,5 +48,5 @@ npm install
 
 Run app in development (frontend & backend)
 ```sh
-npm dev run
+npm run dev
 ```

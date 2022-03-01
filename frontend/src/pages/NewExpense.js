@@ -4,9 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { createExpense, reset } from "../features/expenses/expenseSlice";
-import { Form } from "react-bootstrap";
 import { Spinner } from "react-bootstrap";
-import BackButton from "../Components/BackButton";
+import BackButton from "../components/BackButton";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function NewExpense() {
@@ -29,14 +28,14 @@ export default function NewExpense() {
     if (isSuccess) {
       dispatch(reset());
       toast.success("Your expense was recorded successfully");
-      navigate("/expenses");
+      navigate("/my-dashboard");
     }
     dispatch(reset());
   }, [dispatch, isError, isLoading, isSuccess, navigate, message]);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(category);
+    // console.log(category);
     dispatch(createExpense({ category, amount }));
   };
 
@@ -56,7 +55,7 @@ export default function NewExpense() {
           <label htmlFor="email">Email</label>
           <input type="text" className="form-control" value={email} disabled />
         </div>
-        <Form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit}>
           <div className="form-group">
             <label htmlFor="category">Category</label>
             <select
@@ -85,7 +84,7 @@ export default function NewExpense() {
           <div className="form-group">
             <button className="btn btn-block">Submit</button>
           </div>
-        </Form>
+        </form>
       </section>
     </div>
   );

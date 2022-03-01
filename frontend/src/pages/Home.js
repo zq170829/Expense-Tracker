@@ -1,6 +1,6 @@
-import CarouselPage from "./CarouselPage/CarouselPage";
-import About from "./About/About";
-import Pricing from "./Pricing/Pricing";
+import CarouselPage from "./CarouselPage";
+import About from "./About";
+import Pricing from "./Pricing";
 import Footer from "./Footer";
 
 function Home() {
@@ -15,5 +15,4 @@ function Home() {
     </div>
   );
 }
-
 export default Home;

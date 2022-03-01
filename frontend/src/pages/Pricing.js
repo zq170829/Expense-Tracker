@@ -4,7 +4,6 @@ import CardGroup from "react-bootstrap/CardGroup";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Pricing.css";
 
 export default class Pricing extends Component {
   render() {

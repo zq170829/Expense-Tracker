@@ -14,7 +14,6 @@ const initialState = {
 export const createExpense = createAsyncThunk(
   "expense/create",
   async (expenseData, thunkAPI) => {
-    console.log(expenseData);
     try {
       const token = thunkAPI.getState().auth.user.token;
       return await expenseService.createExpense(expenseData, token);
@@ -31,7 +30,7 @@ export const createExpense = createAsyncThunk(
 );
 // Get user all expenses data
 export const getExpenses = createAsyncThunk(
-  "expense/getAll",
+  "expenses/getAll",
   async (_, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token;
@@ -49,42 +48,42 @@ export const getExpenses = createAsyncThunk(
 );
 
 // Review single expense item
-export const getExpenseSingle = createAsyncThunk(
-  "expenses/get",
-  async (expenseId, thunkAPI) => {
-    try {
-      const token = thunkAPI.getState().auth.user.token;
-      return await expenseService.getExpenseSingle(expenseId, token);
-    } catch (error) {
-      const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-      return thunkAPI.rejectWithValue(message);
-    }
-  }
-);
+// export const getExpenseSingle = createAsyncThunk(
+//   "expenses/get",
+//   async (expenseId, thunkAPI) => {
+//     try {
+//       const token = thunkAPI.getState().auth.user.token;
+//       return await expenseService.getExpenseSingle(expenseId, token);
+//     } catch (error) {
+//       const message =
+//         (error.response &&
+//           error.response.data &&
+//           error.response.data.message) ||
+//         error.message ||
+//         error.toString();
+//       return thunkAPI.rejectWithValue(message);
+//     }
+//   }
+// );
 
 // delete single expense item
-export const deleteExpense= createAsyncThunk(
-  "expenses/delete",
-  async (expenseId, thunkAPI) => {
-    try {
-      const token = thunkAPI.getState().auth.user.token;
-      return await expenseService.deleteExpense(expenseId, token);
-    } catch (error) {
-      const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-      return thunkAPI.rejectWithValue(message);
-    }
-  }
-);
+// export const deleteExpense= createAsyncThunk(
+//   "expenses/delete",
+//   async (expenseId, thunkAPI) => {
+//     try {
+//       const token = thunkAPI.getState().auth.user.token;
+//       return await expenseService.deleteExpense(expenseId, token);
+//     } catch (error) {
+//       const message =
+//         (error.response &&
+//           error.response.data &&
+//           error.response.data.message) ||
+//         error.message ||
+//         error.toString();
+//       return thunkAPI.rejectWithValue(message);
+//     }
+//   }
+// );
 
 export const expenseSlice = createSlice({
   name: "expense",
@@ -120,19 +119,23 @@ export const expenseSlice = createSlice({
       state.isError= true;
       state.message = action.payload;
     })
-    .addCase(getExpenseSingle.pending, (state) => {
-      state.isLoading = true;
-    })
-    .addCase(getExpenseSingle.fulfilled, (state, action) => {
-      state.isLoading = false;
-      state.isSuccess = true;
-      state.expense = action.payload;
-    })
-    .addCase(getExpenseSingle.rejected, (state, action) => {
-      state.isLoading = false;
-      state.isError= true;
-      state.message = action.payload;
-    })
+    // .addCase(getExpenseSingle.pending, (state) => {
+    //   state.isLoading = true;
+    // })
+    // .addCase(getExpenseSingle.fulfilled, (state, action) => {
+    //   state.isLoading = false;
+    //   state.isSuccess = true;
+    //   state.expense = action.payload;
+    // })
+    // .addCase(getExpenseSingle.rejected, (state, action) => {
+    //   state.isLoading = false;
+    //   state.isError= true;
+    //   state.message = action.payload;
+    // })
+    // .addCase(deleteExpense.fulfilled, (state, action) => {
+    //   state.isSuccess = true;
+    //   state.expense = action.payload;
+    // })
   },
 });
 

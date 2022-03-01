@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
-import BackButton from "../Components/BackButton";
+import BackButton from "../components/BackButton";
 import { toast } from "react-toastify";
 import { getExpenseSingle, reset } from "../features/expenses/expenseSlice";
 import { Spinner } from "react-bootstrap";

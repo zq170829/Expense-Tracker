@@ -3,16 +3,23 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
-import { login, reset } from "../../features/auth/authSlice";
-import Spinner from "../../Components/Spinner";
+import { login, reset } from "../features/auth/authSlice";
+import { Link } from "react-router-dom";
+import Spinner from "../components/Spinner";
 
 function Login() {
+  const linkStyle = {
+    textDecoration: "underline",
+    color: "#fabb47",
+  };
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
   const { email, password } = formData;
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -20,27 +27,16 @@ function Login() {
   const { user, isError, isLoading, isSuccess, message } = useSelector(
     (state) => state.auth
   );
-
-  // useEffect(() => {
-  //   if (isError) {
-  //     toast.error(message);
-  //   }
-  //   // Redirect when logged in
-  //   if (isSuccess || user) {
-  //     navigate("/");
-  //   }
-  //   dispatch(reset());
-  // }, [isError, isSuccess, user, message, navigate, dispatch]);
-    useEffect(() => {
+  useEffect(() => {
     if (isError) {
       toast.error(message);
     }
     // Redirect when logged in
     if (isSuccess || user) {
       navigate("/my-dashboard");
-      toast.success('Your account was successfully logged in!');
+      toast.success("Your account was successfully logged in!");
     }
-    // dispatch(reset());
+    dispatch(reset());
   }, [isError, isSuccess, user, message, navigate, dispatch]);
 
   const onChange = (e) => {
@@ -52,7 +48,6 @@ function Login() {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
     const userData = {
       email,
       password,
@@ -60,8 +55,8 @@ function Login() {
     dispatch(login(userData));
   };
 
-  if(isLoading) {
-    return <Spinner />
+  if (isLoading) {
+    return <Spinner />;
   }
   return (
     <>
@@ -100,6 +95,12 @@ function Login() {
           </div>
           <div className="form-group">
             <button className="btn btn-block">Submit</button>
+          </div>
+          <div className="container">
+            Do not have an account? Register {""}
+            <Link to="/register" style={linkStyle}>
+              here
+            </Link>
           </div>
         </form>
       </section>

@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { useState} from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { FaQuestionCircle, FaTicketAlt } from "react-icons/fa";
-import Balance from "./Balance";
 
 function Dashboard() {
   const { user } = useSelector((state) => state.auth);
@@ -15,11 +14,9 @@ function Dashboard() {
         <p className="text-center">What do you need help with?</p>
       </section>
       <section className="pt-5">
-        {/* <Balance /> */}
         <Link to="/new-expense" className="btn btn-reverse btn-block">
           <FaQuestionCircle /> Record New Expense
         </Link>
-
         <Link to="/expenses" className="btn btn-block">
           <FaTicketAlt /> View My Total Expense
         </Link>

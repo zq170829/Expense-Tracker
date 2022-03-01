@@ -1,12 +1,18 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FaUser } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
-import { register, reset } from "../../features/auth/authSlice";
-import Spinner from "../../Components/Spinner";
+import { register, reset } from "../features/auth/authSlice";
+import Spinner from "../components/Spinner";
 
 function Register() {
+  const linkStyle = {
+    textDecoration: "underline",
+    color: "#fabb47",
+  };
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,13 +33,11 @@ function Register() {
     if (isError) {
       toast.error(message);
     }
-
-    //redirect when logged in
+    //redirect to homepage when register an account
     if (isSuccess || user) {
-      navigate("/login");
-      toast.success('Your account was successfully registered!');
+      navigate("/my-dashboard");
+      toast.success("Your account was successfully registered!");
     }
-
     dispatch(reset());
   }, [isError, isSuccess, user, message, navigate, dispatch]);
 
@@ -59,7 +63,7 @@ function Register() {
   };
 
   if (isLoading) {
-    return <Spinner />
+    return <Spinner />;
   }
   return (
     <>
@@ -124,6 +128,13 @@ function Register() {
             <button className="btn btn-block">Submit</button>
           </div>
         </form>
+        <div className="container">
+          Already have an account? Log in {""}
+          <Link to="/login" style={linkStyle}>
+            {" "}
+            here
+          </Link>
+        </div>
       </section>
     </>
   );

@@ -5,9 +5,9 @@ import authService from "./authService";
 const user = JSON.parse(localStorage.getItem("user"));
 
 const initialState = {
-  // user: user ? user : null,
+  user: user ? user : null,
   // user: "Qi",
-  user: null,
+  // user: null,
   isError: false,
   isSuccess: false,
   isLoading: false,
@@ -18,7 +18,7 @@ const initialState = {
 export const register = createAsyncThunk(
   "auth/register",
   async (user, thunkAPI) => {
-    console.log(user);
+    // console.log(user);
     try {
       return await authService.register(user);
     } catch (error) {
@@ -32,8 +32,6 @@ export const register = createAsyncThunk(
     }
   }
 );
-
-//use inside of async come from the form
 
 // Login user
 export const login = createAsyncThunk("auth/login", async (user, thunkAPI) => {
@@ -100,6 +98,5 @@ export const authSlice = createSlice({
       });
   },
 });
-
 export const { reset } = authSlice.actions;
 export default authSlice.reducer;
