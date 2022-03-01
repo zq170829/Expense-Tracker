@@ -29,16 +29,13 @@ function App() {
           <Route path="/my-dashboard" element={<PrivateRoute />}>
             <Route path="/my-dashboard" element={<Dashboard />} />
           </Route>
-          {/*<Route path="/new-expense" element={<NewExpense />} /> */}
           {/* <Route path="/new-expense" element={<PrivateRoute />}>
             <Route path="/new-expense" element={<NewExpense />} />
-          </Route> */}
-          {/* <Route path="/expenses" element={<PrivateRoute />}>
+          </Route>
+          <Route path="/expenses" element={<PrivateRoute />}>
             <Route path="/expenses" element={<ExpensesList />} />
           </Route> */}
-
-          <Route path="/new-expense" element={<NewExpense />}></Route>
-          {/* <Route path="/my-dashboard" element={<Dashboard />} /> */}
+          <Route path="/new-expense" element={<NewExpense />} />
           <Route path="/expenses" element={<ExpensesList />} />
           {/* <Route path="/expenses/expenseId" element={<ExpensePage />} /> */}
         </Routes>
@@ -48,5 +45,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

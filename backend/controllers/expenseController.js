@@ -33,7 +33,7 @@ const getExpense = asyncHandler(async (req, res) => {
 
   if (!expense) {
     res.status(404);
-    throw new Error("expense not found! controller!");
+    throw new Error("expense not found! ");
   }
 
   if (expense.user.toString() !== req.user.id) {
@@ -52,7 +52,7 @@ const createExpense = asyncHandler(async (req, res) => {
   if (!category || !amount) {
     res.status(400);
     throw new Error(
-      "Please enter expense category and amount! from expenseController!"
+      "Please enter expense category and amount!"
     );
   }
   const expense = await Expense.create({
@@ -112,7 +112,7 @@ const deleteExpense = asyncHandler(async (req, res) => {
 
   if (!expense) {
     res.status(404);
-    throw new Error("expense not found! controller!");
+    throw new Error("expense not found!");
   }
 
   if (expense.user.toString() !== req.user.id) {
